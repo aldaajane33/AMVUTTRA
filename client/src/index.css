@@ -1,0 +1,309 @@
+/* ═══════════════════════════════════════════════════════════════════════
+   AMVUTTRA® Product Website — Design System
+   Philosophy: Clinical Precision / Swiss Medical Modernism
+   Fonts: DM Serif Display (headings) + DM Sans (body) + JetBrains Mono (data)
+   Colors: Navy (#1A3A6B) + Teal (#00C2A8) + White — restrained, clinical
+   Layout: Asymmetric split-column; data as hero; generous whitespace
+   ═══════════════════════════════════════════════════════════════════════ */
+
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  --radius: 0.5rem;
+
+  /* Brand Colors */
+  --navy: #1A3A6B;
+  --navy-dark: #0D2047;
+  --navy-deep: #060D18;
+  --blue: #0093C4;
+  --teal: #00C2A8;
+  --teal-light: #00E5C7;
+  --green: #27AE60;
+  --orange: #E67E22;
+  --red: #C0392B;
+  --gold: #F1C40F;
+
+  /* Semantic Tokens */
+  --background: oklch(0.985 0.002 90);
+  --foreground: oklch(0.18 0.04 240);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.18 0.04 240);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.18 0.04 240);
+  --primary: oklch(0.32 0.1 240);
+  --primary-foreground: oklch(0.98 0 0);
+  --secondary: oklch(0.94 0.005 220);
+  --secondary-foreground: oklch(0.32 0.1 240);
+  --muted: oklch(0.94 0.005 220);
+  --muted-foreground: oklch(0.52 0.03 240);
+  --accent: oklch(0.72 0.14 175);
+  --accent-foreground: oklch(0.18 0.04 240);
+  --destructive: oklch(0.55 0.22 27);
+  --destructive-foreground: oklch(0.985 0 0);
+  --border: oklch(0.88 0.01 240);
+  --input: oklch(0.88 0.01 240);
+  --ring: oklch(0.72 0.14 175);
+
+  /* Chart Colors */
+  --chart-1: oklch(0.72 0.14 175);
+  --chart-2: oklch(0.55 0.16 240);
+  --chart-3: oklch(0.62 0.18 145);
+  --chart-4: oklch(0.65 0.18 55);
+  --chart-5: oklch(0.55 0.22 27);
+
+  /* Sidebar */
+  --sidebar: oklch(0.18 0.06 240);
+  --sidebar-foreground: oklch(0.92 0.01 240);
+  --sidebar-primary: oklch(0.72 0.14 175);
+  --sidebar-primary-foreground: oklch(0.18 0.04 240);
+  --sidebar-accent: oklch(0.25 0.07 240);
+  --sidebar-accent-foreground: oklch(0.92 0.01 240);
+  --sidebar-border: oklch(0.28 0.06 240);
+  --sidebar-ring: oklch(0.72 0.14 175);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'DM Serif Display', Georgia, serif;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+  }
+  .font-mono, code, .data-num {
+    font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  }
+  button:not(:disabled),
+  [role="button"]:not([aria-disabled="true"]),
+  a[href] {
+    @apply cursor-pointer;
+  }
+}
+
+@layer components {
+  .container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    max-width: 1200px;
+  }
+
+  .flex {
+    min-height: 0;
+    min-width: 0;
+  }
+
+  @media (min-width: 768px) {
+    .container {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .container {
+      padding-left: 3rem;
+      padding-right: 3rem;
+    }
+  }
+
+  /* Scroll reveal */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+  .reveal-delay-4 { transition-delay: 0.4s; }
+
+  /* Stat counter */
+  .stat-number {
+    font-family: 'DM Serif Display', Georgia, serif;
+    font-size: clamp(3rem, 6vw, 5rem);
+    line-height: 1;
+    color: var(--teal);
+    letter-spacing: -0.03em;
+  }
+
+  /* Section accent line */
+  .section-accent {
+    width: 48px;
+    height: 4px;
+    background: var(--teal);
+    border-radius: 2px;
+    margin-bottom: 1rem;
+  }
+
+  /* Glass card */
+  .glass-card {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    box-shadow: 0 4px 24px rgba(26, 58, 107, 0.08);
+  }
+
+  /* Progress bar */
+  .progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--teal), var(--blue));
+    z-index: 1000;
+    transition: width 0.1s linear;
+    box-shadow: 0 0 8px rgba(0, 194, 168, 0.5);
+  }
+
+  /* Animated bar fill */
+  .bar-fill {
+    height: 100%;
+    border-radius: 9999px;
+    transition: width 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+    width: 0%;
+  }
+  .bar-fill.animated {
+    width: var(--target-width);
+  }
+
+  /* Flip card */
+  .flip-card {
+    perspective: 1000px;
+  }
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    transform-style: preserve-3d;
+  }
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+  .flip-card-front,
+  .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    border-radius: 0.75rem;
+    overflow: hidden;
+  }
+  .flip-card-back {
+    transform: rotateY(180deg);
+  }
+
+  /* Forest plot */
+  .forest-row:hover {
+    background: rgba(0, 194, 168, 0.06);
+  }
+
+  /* Nav active state */
+  .nav-link.active {
+    color: var(--teal) !important;
+    border-bottom-color: var(--teal) !important;
+  }
+
+  /* Tooltip */
+  .tooltip-trigger:hover .tooltip-content {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+  .tooltip-content {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(4px);
+    transition: all 0.2s ease;
+  }
+
+  /* Print styles */
+  @media print {
+    .no-print { display: none !important; }
+    .print-only { display: block !important; }
+    body { font-size: 11pt; color: #000; background: #fff; }
+    h1 { font-size: 22pt; }
+    h2 { font-size: 16pt; }
+    h3 { font-size: 13pt; }
+    .page-break { page-break-before: always; }
+    a { color: #000; text-decoration: none; }
+    .shadow-lg, .shadow-md { box-shadow: none; }
+  }
+
+  /* Prefers reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    .reveal,
+    .bar-fill,
+    .flip-card-inner,
+    * {
+      animation: none !important;
+      transition-duration: 0.01ms !important;
+    }
+    .reveal {
+      opacity: 1;
+      transform: none;
+    }
+  }
+}
