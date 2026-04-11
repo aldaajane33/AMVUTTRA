@@ -868,8 +868,10 @@ export default function TerritoryMapSection() {
             </div>
           </div>
         )}
+        </div>{/* ── end SELECTOR + DETAIL CARD grid ── */}
 
         {/* ── SOURCE STUDY CARD ──────────────────────────────────── */}
+
         <div style={{ background: "#fff", border: "1px solid #D1E8E4", borderRadius: "16px", padding: "24px 28px", marginBottom: "32px", boxShadow: "0 2px 12px rgba(0,0,0,0.04)" }}>
           <div style={{ display: "flex", alignItems: "flex-start", gap: "16px" }}>
             <div style={{ background: "#E6F7F5", border: "1px solid #14b8a6", borderRadius: "10px", padding: "10px 14px", flexShrink: 0, fontSize: "10px", fontWeight: 700, color: "#0d9488", letterSpacing: "0.05em", textAlign: "center" as const, lineHeight: 1.3 }}>
@@ -953,8 +955,6 @@ export default function TerritoryMapSection() {
               </tbody>
             </table>
           </div>
-        </div>
-
         </div>
 
       </div>
