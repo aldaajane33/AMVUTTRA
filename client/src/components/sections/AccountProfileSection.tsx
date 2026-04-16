@@ -25,7 +25,7 @@ interface Account {
   city: string;
   priority: Priority;
   beds: number;
-  mashCandidates: number;
+  attrCandidates: number;
   specialists: { neurology: number; cardiology: number; internal: number };
   formulary: FormularyStatus;
   callFreq: CallFrequency;
@@ -91,13 +91,13 @@ const ACCOUNTS: Account[] = [
     city: "Riyadh",
     priority: "VERY HIGH",
     beds: 1100,
-    mashCandidates: 48,
+    attrCandidates: 48,
     specialists: { neurology: 12, cardiology: 18, internal: 25 },
     formulary: "Listed",
     callFreq: "Weekly",
     overview: {
       patientOpportunity:
-        "Highest-volume rare-disease referral centre in KSA. Strong hATTR pipeline via established amyloid clinic. Estimated 48 MASH-eligible patients currently followed in neurology + cardiology.",
+        "Highest-volume rare-disease referral centre in KSA. Strong hATTR pipeline via established amyloid clinic. Estimated 48 ATTR-eligible patients currently followed in neurology + cardiology.",
       specialistBreakdown:
         "12 neurologists (3 with dedicated neuromuscular interest), 18 cardiologists (5 with amyloid interest), 25 internal medicine consultants. Multidisciplinary amyloid clinic meets monthly.",
       notes: "National-level decision-making authority. SFDA joint advisory board member. Formulary approval here cascades to many MOH-affiliated facilities.",
@@ -123,7 +123,7 @@ const ACCOUNTS: Account[] = [
     city: "Riyadh",
     priority: "VERY HIGH",
     beds: 800,
-    mashCandidates: 32,
+    attrCandidates: 32,
     specialists: { neurology: 8, cardiology: 14, internal: 20 },
     formulary: "Listed",
     callFreq: "Bi-weekly",
@@ -154,7 +154,7 @@ const ACCOUNTS: Account[] = [
     city: "Riyadh",
     priority: "VERY HIGH",
     beds: 1500,
-    mashCandidates: 38,
+    attrCandidates: 38,
     specialists: { neurology: 6, cardiology: 12, internal: 30 },
     formulary: "Pending",
     callFreq: "Weekly",
@@ -185,7 +185,7 @@ const ACCOUNTS: Account[] = [
     city: "Riyadh",
     priority: "VERY HIGH",
     beds: 700,
-    mashCandidates: 22,
+    attrCandidates: 22,
     specialists: { neurology: 10, cardiology: 8, internal: 18 },
     formulary: "Listed",
     callFreq: "Bi-weekly",
@@ -216,7 +216,7 @@ const ACCOUNTS: Account[] = [
     city: "Riyadh",
     priority: "VERY HIGH",
     beds: 950,
-    mashCandidates: 28,
+    attrCandidates: 28,
     specialists: { neurology: 6, cardiology: 10, internal: 22 },
     formulary: "Restricted",
     callFreq: "Monthly",
@@ -247,7 +247,7 @@ const ACCOUNTS: Account[] = [
     city: "Riyadh",
     priority: "VERY HIGH",
     beds: 620,
-    mashCandidates: 18,
+    attrCandidates: 18,
     specialists: { neurology: 4, cardiology: 8, internal: 15 },
     formulary: "Not Listed",
     callFreq: "Monthly",
@@ -280,7 +280,7 @@ const ACCOUNTS: Account[] = [
     city: "Jeddah",
     priority: "VERY HIGH",
     beds: 500,
-    mashCandidates: 22,
+    attrCandidates: 22,
     specialists: { neurology: 8, cardiology: 12, internal: 16 },
     formulary: "Listed",
     callFreq: "Weekly",
@@ -311,7 +311,7 @@ const ACCOUNTS: Account[] = [
     city: "Jeddah",
     priority: "VERY HIGH",
     beds: 850,
-    mashCandidates: 28,
+    attrCandidates: 28,
     specialists: { neurology: 10, cardiology: 9, internal: 22 },
     formulary: "Pending",
     callFreq: "Bi-weekly",
@@ -342,7 +342,7 @@ const ACCOUNTS: Account[] = [
     city: "Jeddah",
     priority: "VERY HIGH",
     beds: 260,
-    mashCandidates: 12,
+    attrCandidates: 12,
     specialists: { neurology: 4, cardiology: 6, internal: 10 },
     formulary: "Not Listed",
     callFreq: "Bi-weekly",
@@ -372,7 +372,7 @@ const ACCOUNTS: Account[] = [
     city: "Jeddah",
     priority: "VERY HIGH",
     beds: 750,
-    mashCandidates: 26,
+    attrCandidates: 26,
     specialists: { neurology: 6, cardiology: 12, internal: 18 },
     formulary: "Listed",
     callFreq: "Weekly",
@@ -405,7 +405,7 @@ const ACCOUNTS: Account[] = [
     city: "Al-Khobar",
     priority: "HIGH",
     beds: 650,
-    mashCandidates: 20,
+    attrCandidates: 20,
     specialists: { neurology: 8, cardiology: 10, internal: 16 },
     formulary: "Listed",
     callFreq: "Bi-weekly",
@@ -436,7 +436,7 @@ const ACCOUNTS: Account[] = [
     city: "Dammam",
     priority: "HIGH",
     beds: 900,
-    mashCandidates: 24,
+    attrCandidates: 24,
     specialists: { neurology: 5, cardiology: 9, internal: 20 },
     formulary: "Pending",
     callFreq: "Monthly",
@@ -467,7 +467,7 @@ const ACCOUNTS: Account[] = [
     city: "Dhahran",
     priority: "HIGH",
     beds: 450,
-    mashCandidates: 16,
+    attrCandidates: 16,
     specialists: { neurology: 6, cardiology: 8, internal: 14 },
     formulary: "Listed",
     callFreq: "Bi-weekly",
@@ -500,7 +500,7 @@ const ACCOUNTS: Account[] = [
     city: "Madinah",
     priority: "MEDIUM",
     beds: 550,
-    mashCandidates: 14,
+    attrCandidates: 14,
     specialists: { neurology: 4, cardiology: 7, internal: 12 },
     formulary: "Not Listed",
     callFreq: "Monthly",
@@ -530,7 +530,7 @@ const ACCOUNTS: Account[] = [
     city: "Buraydah",
     priority: "MEDIUM",
     beds: 390,
-    mashCandidates: 10,
+    attrCandidates: 10,
     specialists: { neurology: 3, cardiology: 5, internal: 8 },
     formulary: "Not Listed",
     callFreq: "Quarterly",
@@ -560,7 +560,7 @@ const ACCOUNTS: Account[] = [
     city: "Abha",
     priority: "MEDIUM",
     beds: 510,
-    mashCandidates: 12,
+    attrCandidates: 12,
     specialists: { neurology: 3, cardiology: 6, internal: 10 },
     formulary: "Not Listed",
     callFreq: "Quarterly",
@@ -590,7 +590,7 @@ const ACCOUNTS: Account[] = [
     city: "Jizan",
     priority: "MEDIUM",
     beds: 430,
-    mashCandidates: 10,
+    attrCandidates: 10,
     specialists: { neurology: 2, cardiology: 5, internal: 10 },
     formulary: "Not Listed",
     callFreq: "Quarterly",
@@ -633,7 +633,7 @@ export default function AccountProfileSection() {
     return acc;
   }, {});
 
-  const totalMash = ACCOUNTS.reduce((s, a) => s + a.mashCandidates, 0);
+  const totalMash = ACCOUNTS.reduce((s, a) => s + a.attrCandidates, 0);
 
   const cardStyle = (priority: Priority): React.CSSProperties => ({
     background: "rgba(255,255,255,0.04)",
@@ -662,14 +662,14 @@ export default function AccountProfileSection() {
           Account Profiles
         </h2>
         <p style={{ color: "rgba(255,255,255,0.55)", fontSize: 14, marginBottom: 32 }}>
-          17 strategic accounts across 4 regions · {totalMash} estimated MASH-eligible patients
+          17 strategic accounts across 4 regions · {totalMash} estimated ATTR-eligible patients
         </p>
 
         {/* Territory summary KPIs */}
         <div style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: 12, marginBottom: 40 }}>
           {[
             { label: "Total Accounts", value: "17", color: "#00C2A8" },
-            { label: "MASH Candidates", value: `~${totalMash}`, color: "#F59E0B" },
+            { label: "ATTR Candidates", value: `~${totalMash}`, color: "#F59E0B" },
             { label: "Listed Formulary", value: `${ACCOUNTS.filter(a => a.formulary === "Listed").length}`, color: "#22C55E" },
             { label: "Very High Priority", value: `${ACCOUNTS.filter(a => a.priority === "VERY HIGH").length}`, color: "#ef4444" },
           ].map((k) => (
@@ -747,7 +747,7 @@ export default function AccountProfileSection() {
                 <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 8, marginBottom: 14 }}>
                   {[
                     { label: "Beds", value: account.beds.toLocaleString(), color: "#60A5FA" },
-                    { label: "MASH Est.", value: `~${account.mashCandidates}`, color: "#F59E0B" },
+                    { label: "ATTR Est.", value: `~${account.attrCandidates}`, color: "#F59E0B" },
                     { label: "Specialists", value: account.specialists.neurology + account.specialists.cardiology, color: "#00C2A8" },
                   ].map((stat) => (
                     <div key={stat.label} style={{ background: "rgba(255,255,255,0.04)", borderRadius: 8, padding: "8px 10px", textAlign: "center" }}>
@@ -843,7 +843,7 @@ export default function AccountProfileSection() {
                     <div style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: 12, marginBottom: 24 }}>
                       {[
                         { label: "Beds", value: selectedAccount.beds.toLocaleString(), color: "#60A5FA" },
-                        { label: "MASH Candidates", value: `~${selectedAccount.mashCandidates}`, color: "#F59E0B" },
+                        { label: "ATTR Candidates", value: `~${selectedAccount.attrCandidates}`, color: "#F59E0B" },
                         { label: "Neurologists", value: selectedAccount.specialists.neurology, color: "#a855f7" },
                         { label: "Cardiologists", value: selectedAccount.specialists.cardiology, color: "#ef4444" },
                       ].map((s) => (
@@ -962,7 +962,7 @@ export default function AccountProfileSection() {
             <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 13, fontFamily: "DM Sans, sans-serif" }}>
               <thead>
                 <tr style={{ background: "rgba(0,194,168,0.12)" }}>
-                  {["Account", "City", "Priority", "Beds", "MASH Est.", "Neuro", "Cardio", "Formulary", "Call Freq"].map((h) => (
+                  {["Account", "City", "Priority", "Beds", "ATTR Est.", "Neuro", "Cardio", "Formulary", "Call Freq"].map((h) => (
                     <th key={h} style={{ padding: "12px 14px", textAlign: "left", color: "#00C2A8", fontWeight: 700, fontSize: 11, textTransform: "uppercase", letterSpacing: "0.06em", whiteSpace: "nowrap", borderBottom: "1px solid rgba(255,255,255,0.08)" }}>
                       {h}
                     </th>
@@ -986,7 +986,7 @@ export default function AccountProfileSection() {
                       </span>
                     </td>
                     <td style={{ padding: "11px 14px", color: "#60A5FA", fontWeight: 600, borderBottom: "1px solid rgba(255,255,255,0.05)" }}>{a.beds.toLocaleString()}</td>
-                    <td style={{ padding: "11px 14px", color: "#F59E0B", fontWeight: 600, borderBottom: "1px solid rgba(255,255,255,0.05)" }}>~{a.mashCandidates}</td>
+                    <td style={{ padding: "11px 14px", color: "#F59E0B", fontWeight: 600, borderBottom: "1px solid rgba(255,255,255,0.05)" }}>~{a.attrCandidates}</td>
                     <td style={{ padding: "11px 14px", color: "#a855f7", fontWeight: 600, borderBottom: "1px solid rgba(255,255,255,0.05)" }}>{a.specialists.neurology}</td>
                     <td style={{ padding: "11px 14px", color: "#ef4444", fontWeight: 600, borderBottom: "1px solid rgba(255,255,255,0.05)" }}>{a.specialists.cardiology}</td>
                     <td style={{ padding: "11px 14px", borderBottom: "1px solid rgba(255,255,255,0.05)" }}>
